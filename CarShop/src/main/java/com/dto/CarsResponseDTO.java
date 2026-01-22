@@ -1,6 +1,6 @@
-package com.example.CarShop.controller;
+package com.dto;
 
-import com.example.CarShop.cars.Cars;
+import com.example.CarShop.domain.Cars;
 
 public record CarsResponseDTO(Long id, String carName, int carYear, int carValue, String carCondition, String email) {
     public CarsResponseDTO(Cars cars){

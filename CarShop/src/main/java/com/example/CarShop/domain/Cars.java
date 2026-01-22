@@ -1,4 +1,4 @@
-package com.example.CarShop.cars;
+package com.example.CarShop.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

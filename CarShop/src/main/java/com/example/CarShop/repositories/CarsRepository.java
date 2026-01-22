@@ -1,8 +1,8 @@
-package com.example.CarShop.controller;
+package com.example.CarShop.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.CarShop.cars.Cars;
+import com.example.CarShop.domain.Cars;
 
 public interface CarsRepository extends JpaRepository<Cars, Long>{
     

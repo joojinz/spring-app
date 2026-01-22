@@ -1,4 +1,4 @@
-package com.example.CarShop.controller;
+package com.dto;
 
 public record CarsRequestDTO (){
 
