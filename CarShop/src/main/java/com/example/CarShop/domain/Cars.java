@@ -19,28 +19,21 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Cars {
-    
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public  Long id;
 
-    @Column(name = "carname")
-    public String carName;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  public Long id;
 
-    @Column(name = "caryear")
-    public Integer carYear;
+  @Column(name = "carname")
+  public String carName;
 
-    @Column(name = "carvalue")
-    public Integer carValue;
+  @Column(name = "caryear")
+  public Integer carYear;
 
-    @Column(name = "carcondition")
-    public String carCondition;
+  @Column(name = "carvalue")
+  public Integer carValue;
 
-    @Column(name = "email")
-    public String email;
-
-
-
-    
+  @Column(name = "carcondition")
+  public String carCondition;
 }

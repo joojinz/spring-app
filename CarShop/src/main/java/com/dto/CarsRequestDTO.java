@@ -1,6 +1,5 @@
 package com.dto;
 
-public record CarsRequestDTO (){
-
+public record CarsRequestDTO() {
     
 }

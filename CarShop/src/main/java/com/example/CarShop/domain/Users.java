@@ -10,19 +10,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table (name = "users")
+@Table(name = "users")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Users {
-    @Id
-    @GeneratedValue(strategy=GenerationType.UUID)
-    private String id;
-    private String user_name;
-    private Number user_password;
-    private Integer user_money;
-    
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  
+  private String id;
+  private String user_name;
+  private String user_email;
+  private Number user_password;
+  private Integer user_money;
 }
