@@ -5,7 +5,7 @@ import com.dto.RegisterDTO;
 import com.dto.ResponseDTO;
 import com.example.CarShop.domain.Users;
 import com.example.CarShop.infraSecurity.TokenService;
-import com.example.CarShop.repositories.UsersRepository;
+import com.example.CarShop.repositories.UserRepository;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 public class AuthController {
-  private final UsersRepository repository;
+  private final UserRepository repository;
   private final PasswordEncoder passwordEncoder;
   private final TokenService tokenService;
 
@@ -41,11 +41,13 @@ public class AuthController {
   @SuppressWarnings("rawtypes")
   public ResponseEntity register(@RequestBody RegisterDTO body) {
     Optional<Users> user = this.repository.findByUserEmail(body.email());
+
     if (user.isEmpty()) {
-      Users newUser = new Users();
+      Users newUser = new Users(body);
       newUser.setUserPassword(passwordEncoder.encode(body.password()));
       newUser.setUserEmail(body.email());
       newUser.setUserName(body.name());
+      newUser.setMoney(body.money());
       this.repository.save(newUser);
       String token = this.tokenService.generateToken(newUser);
       return ResponseEntity.ok(new ResponseDTO(newUser.getUserName(), token));

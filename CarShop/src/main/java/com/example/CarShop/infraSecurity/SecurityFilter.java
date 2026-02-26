@@ -1,7 +1,7 @@
 package com.example.CarShop.infraSecurity;
 
 import com.example.CarShop.domain.Users;
-import com.example.CarShop.repositories.UsersRepository;
+import com.example.CarShop.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,7 +18,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
   @Autowired TokenService tokenService;
-  @Autowired UsersRepository usersRepository;
+  @Autowired UserRepository usersRepository;
 
   @Override
   protected void doFilterInternal(

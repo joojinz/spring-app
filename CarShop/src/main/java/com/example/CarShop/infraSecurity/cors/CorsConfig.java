@@ -9,7 +9,7 @@ public class CorsConfig implements WebMvcConfigurer {
 
   @Override
   public void addCorsMappings(CorsRegistry registry) {
-    // http:localhost:8888 for the front
+    // http:localhost:8888 front
     registry.addMapping("/**").allowedOrigins("http:localhost:8888").allowedMethods("GET", "POST");
   }
 }

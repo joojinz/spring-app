@@ -1,5 +1,6 @@
 package com.example.CarShop.domain;
 
+import com.dto.RegisterDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,9 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
-
-import com.dto.RegisterDTO;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,12 +34,12 @@ public class Users {
   private String userPassword;
 
   @Column(name = "user_money")
-  private BigDecimal userMoney;
+  private BigDecimal money;
 
   public Users(RegisterDTO data) {
     this.userName = data.name();
     this.userEmail = data.email();
     this.userPassword = data.password();
-    this.userMoney = data.money() != null ? data.money() : BigDecimal.ZERO;
+    this.money = data.money() != null ? data.money() : BigDecimal.ZERO;
   }
 }

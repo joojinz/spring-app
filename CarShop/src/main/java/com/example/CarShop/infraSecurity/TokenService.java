@@ -30,7 +30,7 @@ public class TokenService {
       return token;
     } catch (JWTCreationException e) {
 
-      throw new RuntimeException("Erro ao gerar token JWT");
+      throw new RuntimeException("Generate token error");
     }
   }
 
@@ -43,6 +43,7 @@ public class TokenService {
       Algorithm algorithm = Algorithm.HMAC256(secret);
       return JWT.require(algorithm).withIssuer("login-auth-api").build().verify(token).getSubject();
     } catch (JWTVerificationException e) {
+      e.printStackTrace();
       return null;
     }
   }

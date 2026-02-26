@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -19,21 +20,24 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cars {
+public class Car {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   public Long id;
 
   @Column(name = "carname")
-  public String carName;
+  public String model;
 
   @Column(name = "caryear")
-  public Integer carYear;
+  public Integer year;
 
   @Column(name = "carvalue")
-  public Integer carValue;
+  public BigDecimal value;
 
   @Column(name = "carcondition")
-  public String carCondition;
+  public String condition;
+
+  @Column(name = "status")
+  public String status;
 }
